@@ -168,6 +168,9 @@ public class SmartFileManager extends javax.swing.JFrame {
                 }
                 if(SystemUtils.IS_OS_WINDOWS) {
                     javax.swing.UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+                }
+                if(SystemUtils.IS_OS_MAC_OSX || SystemUtils.IS_OS_MAC) {
+                    javax.swing.UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
                 } 
              }
         } catch (ClassNotFoundException ex) {
