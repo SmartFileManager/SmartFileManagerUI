@@ -9,18 +9,27 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
+        
+        <dep-commons-lang3-version>3.3.2</dep-commons-lang3-version>
+        <dep-weblaf-version>1.28</dep-weblaf-version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>de.sciss</groupId>
             <artifactId>weblaf-core</artifactId>
-            <version>1.28</version>
+            <version>${dep-weblaf-version}</version>
         </dependency>
         <dependency>
             <groupId>de.sciss</groupId>
             <artifactId>weblaf-ui</artifactId>
-            <version>1.28</version>
+            <version>${dep-weblaf-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${dep-commons-lang3-version}</version>
+            <type>jar</type>
         </dependency>
         <dependency>
             <groupId>gr.teicm.pm.smartfilemanager</groupId>

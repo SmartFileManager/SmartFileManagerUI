@@ -7,6 +7,7 @@ package gr.teicm.pm.smartfilemanager.smartfilemanagerui;
 
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
+import org.apache.commons.lang3.SystemUtils;
 
 /**
  *
@@ -162,13 +163,13 @@ public class SmartFileManager extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                   //  javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                if (SystemUtils.IS_OS_LINUX) {
                     javax.swing.UIManager.setLookAndFeel("com.sun.java.swing.plaf.gtk.GTKLookAndFeel");
-                    
-                    break;
                 }
-            }
+                if(SystemUtils.IS_OS_WINDOWS) {
+                    javax.swing.UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+                } 
+             }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(SmartFileManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
