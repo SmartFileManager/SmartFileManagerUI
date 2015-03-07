@@ -5,9 +5,8 @@
  */
 package gr.teicm.pm.smartfilemanager.smartfilemanagerui;
 
-import gr.teicm.pm.smartfilemanager.corelibrary.entity.logic.file.DefaultFacade;
-import gr.teicm.pm.smartfilemanager.corelibrary.entity.logic.interfaces.IEntity;
-import java.util.List;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 
 /**
  *
@@ -20,12 +19,7 @@ public class SmartFileManager extends javax.swing.JFrame {
      */
     public SmartFileManager() {
         initComponents();
-        DefaultFacade facade;
-        facade = new DefaultFacade();
-        List<? extends IEntity> list;
-        list = facade.getRootEntity();
-        IEntity entity;
-        entity = list.get(0);
+
     }
 
     /**
@@ -59,6 +53,7 @@ public class SmartFileManager extends javax.swing.JFrame {
         aboutMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jButton1.setText("jButton1");
 
@@ -168,7 +163,9 @@ public class SmartFileManager extends javax.swing.JFrame {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                   //  javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    javax.swing.UIManager.setLookAndFeel("com.sun.java.swing.plaf.gtk.GTKLookAndFeel");
+                    
                     break;
                 }
             }
