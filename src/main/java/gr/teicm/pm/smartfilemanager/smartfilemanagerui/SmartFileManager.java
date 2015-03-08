@@ -32,12 +32,8 @@ public class SmartFileManager extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        fileListModel1 = new com.alee.extended.list.FileListModel();
-        webFileChooserUI1 = new com.alee.laf.filechooser.WebFileChooserUI();
-        webFileChooserUI2 = new com.alee.laf.filechooser.WebFileChooserUI();
-        webFileChooserUI3 = new com.alee.laf.filechooser.WebFileChooserUI();
-        jButton1 = new javax.swing.JButton();
         webPathField1 = new com.alee.extended.filechooser.WebPathField();
+        jButton1 = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -56,6 +52,7 @@ public class SmartFileManager extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gr/teicm/pm/smartfilemanager/smartfilemanagerui/Gnome-process-stops.png"))); // NOI18N
         jButton1.setText("jButton1");
 
         fileMenu.setMnemonic('f');
@@ -126,23 +123,23 @@ public class SmartFileManager extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(webPathField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
-                .addComponent(jButton1)
-                .addContainerGap(165, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(webPathField1, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(178, 178, 178)
+                        .addComponent(jButton1)))
+                .addContainerGap(276, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(76, 76, 76)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addComponent(webPathField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(webPathField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54)
+                .addComponent(jButton1)
+                .addContainerGap(193, Short.MAX_VALUE))
         );
 
         pack();
@@ -200,7 +197,6 @@ public class SmartFileManager extends javax.swing.JFrame {
     private javax.swing.JMenuItem deleteMenuItem;
     private javax.swing.JMenu editMenu;
     private javax.swing.JMenuItem exitMenuItem;
-    private com.alee.extended.list.FileListModel fileListModel1;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
     private javax.swing.JButton jButton1;
@@ -209,9 +205,6 @@ public class SmartFileManager extends javax.swing.JFrame {
     private javax.swing.JMenuItem pasteMenuItem;
     private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
-    private com.alee.laf.filechooser.WebFileChooserUI webFileChooserUI1;
-    private com.alee.laf.filechooser.WebFileChooserUI webFileChooserUI2;
-    private com.alee.laf.filechooser.WebFileChooserUI webFileChooserUI3;
     private com.alee.extended.filechooser.WebPathField webPathField1;
     // End of variables declaration//GEN-END:variables
 
