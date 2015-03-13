@@ -6,7 +6,9 @@
 package gr.teicm.pm.smartfilemanager.smartfilemanagerui;
 
 import java.awt.Dimension;
+import jdk.nashorn.internal.parser.TokenType;
 import org.apache.commons.lang3.SystemUtils;
+import org.jdesktop.swingx.JXTaskPane;
 
 /**
  *
@@ -19,7 +21,7 @@ public class SmartFileManager extends javax.swing.JFrame {
      */
     public SmartFileManager() {
         initComponents();
-
+        //JXTaskPane pane = new JXTaskPane("lol");
     }
 
     /**
@@ -37,6 +39,9 @@ public class SmartFileManager extends javax.swing.JFrame {
         UpButton = new javax.swing.JButton();
         webPathField1 = new com.alee.extended.filechooser.WebPathField();
         jComboBox1 = new javax.swing.JComboBox();
+        jXTaskPaneContainer1 = new org.jdesktop.swingx.JXTaskPaneContainer();
+        jXTaskPane1 = new org.jdesktop.swingx.JXTaskPane();
+        jButton1 = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -56,6 +61,12 @@ public class SmartFileManager extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        navigationPanel.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                navigationPanelComponentShown(evt);
+            }
+        });
 
         forwardButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/go-next.png"))); // NOI18N
         forwardButton.setFocusable(false);
@@ -80,7 +91,7 @@ public class SmartFileManager extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(forwardButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(webPathField1, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE)
+                .addComponent(webPathField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6))
@@ -96,6 +107,14 @@ public class SmartFileManager extends javax.swing.JFrame {
                     .addComponent(webPathField1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
+
+        jXTaskPane1.setTitle("Places");
+        jXTaskPane1.setToolTipText("");
+
+        jButton1.setText("jButton1");
+        jXTaskPane1.getContentPane().add(jButton1);
+
+        jXTaskPaneContainer1.add(jXTaskPane1);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -147,7 +166,15 @@ public class SmartFileManager extends javax.swing.JFrame {
 
         viewMenu.setText("View");
 
-        showHideNavigationBar.setText("Show - hide  nav bar");
+        showHideNavigationBar.setText("Hide navigation bar");
+        showHideNavigationBar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                showHideNavigationBarMousePressed(evt);
+            }
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                showHideNavigationBarMouseClicked(evt);
+            }
+        });
         showHideNavigationBar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 showHideNavigationBarActionPerformed(evt);
@@ -176,13 +203,21 @@ public class SmartFileManager extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(navigationPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addComponent(navigationPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jXTaskPaneContainer1, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 332, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(navigationPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 298, Short.MAX_VALUE))
+                .addGap(43, 43, 43)
+                .addComponent(jXTaskPaneContainer1, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -193,8 +228,28 @@ public class SmartFileManager extends javax.swing.JFrame {
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
     private void showHideNavigationBarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showHideNavigationBarActionPerformed
-        // TODO add your handling code here:
+        if (!navigationPanel.isShowing()) {
+            navigationPanel.setVisible(true);
+            showHideNavigationBar.setText("Hide navigation toolbar");
+        } else {
+            navigationPanel.setVisible(false);
+            showHideNavigationBar.setText("Show navigation toolbar");
+        }
+        
+
     }//GEN-LAST:event_showHideNavigationBarActionPerformed
+
+    private void navigationPanelComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_navigationPanelComponentShown
+
+    }//GEN-LAST:event_navigationPanelComponentShown
+
+    private void showHideNavigationBarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showHideNavigationBarMouseClicked
+
+    }//GEN-LAST:event_showHideNavigationBarMouseClicked
+
+    private void showHideNavigationBarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showHideNavigationBarMousePressed
+
+    }//GEN-LAST:event_showHideNavigationBarMousePressed
 
     /**
      * @param args the command line arguments
@@ -210,13 +265,13 @@ public class SmartFileManager extends javax.swing.JFrame {
                 if (SystemUtils.IS_OS_LINUX) {
                     javax.swing.UIManager.setLookAndFeel("com.sun.java.swing.plaf.gtk.GTKLookAndFeel");
                 }
-                if(SystemUtils.IS_OS_WINDOWS) {
+                if (SystemUtils.IS_OS_WINDOWS) {
                     javax.swing.UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
                 }
-                if(SystemUtils.IS_OS_MAC_OSX || SystemUtils.IS_OS_MAC) {
+                if (SystemUtils.IS_OS_MAC_OSX || SystemUtils.IS_OS_MAC) {
                     javax.swing.UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
-                } 
-             }
+                }
+            }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(SmartFileManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
@@ -249,7 +304,10 @@ public class SmartFileManager extends javax.swing.JFrame {
     private javax.swing.JMenu fileMenu;
     private javax.swing.JButton forwardButton;
     private javax.swing.JMenu helpMenu;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox jComboBox1;
+    private org.jdesktop.swingx.JXTaskPane jXTaskPane1;
+    private org.jdesktop.swingx.JXTaskPaneContainer jXTaskPaneContainer1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JPanel navigationPanel;
     private javax.swing.JMenuItem openMenuItem;
