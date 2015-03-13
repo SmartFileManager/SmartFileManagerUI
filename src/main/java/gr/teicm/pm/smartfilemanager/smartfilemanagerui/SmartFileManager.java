@@ -5,10 +5,7 @@
  */
 package gr.teicm.pm.smartfilemanager.smartfilemanagerui;
 
-import java.awt.Dimension;
-import jdk.nashorn.internal.parser.TokenType;
 import org.apache.commons.lang3.SystemUtils;
-import org.jdesktop.swingx.JXTaskPane;
 
 /**
  *
