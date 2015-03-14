@@ -36,9 +36,15 @@ public class SmartFileManager extends javax.swing.JFrame {
         UpButton = new javax.swing.JButton();
         webPathField1 = new com.alee.extended.filechooser.WebPathField();
         jComboBox1 = new javax.swing.JComboBox();
+        jSplitPane1 = new javax.swing.JSplitPane();
         jXTaskPaneContainer1 = new org.jdesktop.swingx.JXTaskPaneContainer();
         jXTaskPane1 = new org.jdesktop.swingx.JXTaskPane();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jXHyperlink1 = new org.jdesktop.swingx.JXHyperlink();
         jButton1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -88,7 +94,7 @@ public class SmartFileManager extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(forwardButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(webPathField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(webPathField1, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6))
@@ -105,13 +111,38 @@ public class SmartFileManager extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jSplitPane1.setResizeWeight(0.1);
+
+        jXTaskPaneContainer1.setBackground(new java.awt.Color(117, 150, 227));
+
+        jXTaskPane1.setBackground(new java.awt.Color(214, 223, 247));
+        jXTaskPane1.setForeground(new java.awt.Color(255, 19, 15));
         jXTaskPane1.setTitle("Places");
         jXTaskPane1.setToolTipText("");
+        jXTaskPane1.setOpaque(true);
+
+        jPanel1.setLayout(new java.awt.BorderLayout());
+
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1, java.awt.BorderLayout.CENTER);
+
+        jXHyperlink1.setText("jXHyperlink1");
+        jPanel1.add(jXHyperlink1, java.awt.BorderLayout.PAGE_START);
 
         jButton1.setText("jButton1");
-        jXTaskPane1.getContentPane().add(jButton1);
+        jPanel1.add(jButton1, java.awt.BorderLayout.PAGE_END);
+
+        jXTaskPane1.getContentPane().add(jPanel1);
 
         jXTaskPaneContainer1.add(jXTaskPane1);
+
+        jSplitPane1.setLeftComponent(jXTaskPaneContainer1);
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jSplitPane1.setRightComponent(jScrollPane1);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -203,18 +234,14 @@ public class SmartFileManager extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(9, 9, 9)
                 .addComponent(navigationPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jXTaskPaneContainer1, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 332, Short.MAX_VALUE))
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(navigationPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(jXTaskPaneContainer1, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE))
         );
 
         pack();
@@ -303,6 +330,12 @@ public class SmartFileManager extends javax.swing.JFrame {
     private javax.swing.JMenu helpMenu;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private org.jdesktop.swingx.JXHyperlink jXHyperlink1;
     private org.jdesktop.swingx.JXTaskPane jXTaskPane1;
     private org.jdesktop.swingx.JXTaskPaneContainer jXTaskPaneContainer1;
     private javax.swing.JMenuBar menuBar;
