@@ -105,11 +105,15 @@ public class SmartFileManager extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jXTaskPaneContainer1.setBackground(new java.awt.Color(117, 150, 227));
+        org.jdesktop.swingx.VerticalLayout verticalLayout4 = new org.jdesktop.swingx.VerticalLayout();
+        verticalLayout4.setGap(14);
+        jXTaskPaneContainer1.setLayout(verticalLayout4);
+
         jXTaskPane1.setTitle("Places");
         jXTaskPane1.setToolTipText("");
 
         jButton1.setText("jButton1");
-        jXTaskPane1.getContentPane().add(jButton1);
 
         jXTaskPaneContainer1.add(jXTaskPane1);
 
@@ -206,7 +210,7 @@ public class SmartFileManager extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jXTaskPaneContainer1, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 332, Short.MAX_VALUE))
+                .addGap(0, 350, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

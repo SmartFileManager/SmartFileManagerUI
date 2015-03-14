@@ -145,7 +145,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jXTaskPaneContainer1" min="-2" pref="281" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="332" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="350" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -241,6 +241,11 @@
       </SubComponents>
     </Container>
     <Container class="org.jdesktop.swingx.JXTaskPaneContainer" name="jXTaskPaneContainer1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="e3" green="96" red="75" type="rgb"/>
+        </Property>
+      </Properties>
       <SubComponents>
         <Container class="org.jdesktop.swingx.JXTaskPane" name="jXTaskPane1">
           <Properties>
@@ -254,62 +259,11 @@
               </Properties>
             </Component>
           </SubComponents>
-          <LayoutCode>
-            <CodeStatement>
-              <CodeExpression id="1_verticalLayout5">
-                <CodeVariable name="verticalLayout5" type="4096" declaredType="org.jdesktop.swingx.VerticalLayout"/>
-                <ExpressionOrigin>
-                  <ExpressionProvider type="CodeConstructor">
-                    <CodeConstructor class="org.jdesktop.swingx.VerticalLayout" parameterTypes=""/>
-                  </ExpressionProvider>
-                </ExpressionOrigin>
-              </CodeExpression>
-              <StatementProvider type="CodeExpression">
-                <CodeExpression id="1_verticalLayout5"/>
-              </StatementProvider>
-            </CodeStatement>
-            <CodeStatement>
-              <CodeExpression id="1_verticalLayout5"/>
-              <StatementProvider type="CodeMethod">
-                <CodeMethod name="setGap" class="org.jdesktop.swingx.VerticalLayout" parameterTypes="int"/>
-              </StatementProvider>
-              <Parameters>
-                <CodeExpression id="2">
-                  <ExpressionOrigin>
-                    <Value type="int" value="2"/>
-                  </ExpressionOrigin>
-                </CodeExpression>
-              </Parameters>
-            </CodeStatement>
-            <CodeStatement>
-              <CodeExpression id="3">
-                <ExpressionOrigin>
-                  <CodeExpression id="4_jXTaskPane1">
-                    <CodeVariable name="jXTaskPane1" type="8194" declaredType="org.jdesktop.swingx.JXTaskPane"/>
-                    <ExpressionOrigin>
-                      <ExpressionProvider type="ComponentRef">
-                        <ComponentRef name="jXTaskPane1"/>
-                      </ExpressionProvider>
-                    </ExpressionOrigin>
-                  </CodeExpression>
-                  <ExpressionProvider type="CodeMethod">
-                    <CodeMethod name="getContentPane" class="org.jdesktop.swingx.JXTaskPane" parameterTypes=""/>
-                  </ExpressionProvider>
-                </ExpressionOrigin>
-              </CodeExpression>
-              <StatementProvider type="CodeMethod">
-                <CodeMethod name="setLayout" class="java.awt.Container" parameterTypes="java.awt.LayoutManager"/>
-              </StatementProvider>
-              <Parameters>
-                <CodeExpression id="1_verticalLayout5"/>
-              </Parameters>
-            </CodeStatement>
-          </LayoutCode>
         </Container>
       </SubComponents>
       <LayoutCode>
         <CodeStatement>
-          <CodeExpression id="5_verticalLayout4">
+          <CodeExpression id="1_verticalLayout4">
             <CodeVariable name="verticalLayout4" type="4096" declaredType="org.jdesktop.swingx.VerticalLayout"/>
             <ExpressionOrigin>
               <ExpressionProvider type="CodeConstructor">
@@ -318,16 +272,16 @@
             </ExpressionOrigin>
           </CodeExpression>
           <StatementProvider type="CodeExpression">
-            <CodeExpression id="5_verticalLayout4"/>
+            <CodeExpression id="1_verticalLayout4"/>
           </StatementProvider>
         </CodeStatement>
         <CodeStatement>
-          <CodeExpression id="5_verticalLayout4"/>
+          <CodeExpression id="1_verticalLayout4"/>
           <StatementProvider type="CodeMethod">
             <CodeMethod name="setGap" class="org.jdesktop.swingx.VerticalLayout" parameterTypes="int"/>
           </StatementProvider>
           <Parameters>
-            <CodeExpression id="6">
+            <CodeExpression id="2">
               <ExpressionOrigin>
                 <Value type="int" value="14"/>
               </ExpressionOrigin>
@@ -335,7 +289,7 @@
           </Parameters>
         </CodeStatement>
         <CodeStatement>
-          <CodeExpression id="7_jXTaskPaneContainer1">
+          <CodeExpression id="3_jXTaskPaneContainer1">
             <CodeVariable name="jXTaskPaneContainer1" type="8194" declaredType="org.jdesktop.swingx.JXTaskPaneContainer"/>
             <ExpressionOrigin>
               <ExpressionProvider type="ComponentRef">
@@ -347,7 +301,7 @@
             <CodeMethod name="setLayout" class="java.awt.Container" parameterTypes="java.awt.LayoutManager"/>
           </StatementProvider>
           <Parameters>
-            <CodeExpression id="5_verticalLayout4"/>
+            <CodeExpression id="1_verticalLayout4"/>
           </Parameters>
         </CodeStatement>
       </LayoutCode>
