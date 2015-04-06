@@ -6,9 +6,10 @@
 package gr.teicm.pm.smartfilemanager.smartfilemanagerui;
 
 import com.alee.extended.list.WebFileList;
+import gr.teicm.pm.smartfilemanager.corelibrary.entity.logic.User;
 import javax.swing.BorderFactory;
 import org.apache.commons.lang3.SystemUtils;
-import javax.swing.border.Border;
+
 /**
  *
  * @author user
@@ -20,7 +21,8 @@ public class SmartFileManager extends javax.swing.JFrame {
      */
     public SmartFileManager() {
         initComponents();
-        //JXTaskPane pane = new JXTaskPane("lol");
+        String s = new String();
+        s = User.getUsername();
     }
 
     /**
@@ -45,12 +47,12 @@ public class SmartFileManager extends javax.swing.JFrame {
         jXHyperlink1 = new org.jdesktop.swingx.JXHyperlink();
         FilePane = new javax.swing.JPanel();
         computer = new org.jdesktop.swingx.JXTitledPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        collapsiblePanel1 = new gr.teicm.pm.smartfilemanager.smartfilemanagerui.collapsiblepane.CollapsiblePanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        computerPanel = new javax.swing.JPanel();
+        computerScrollPane = new javax.swing.JScrollPane();
+        computerScrollablePane = new javax.swing.JPanel();
+        jXTaskPaneContainer2 = new org.jdesktop.swingx.JXTaskPaneContainer();
+        userHomePane = new org.jdesktop.swingx.JXTaskPane();
+        jPanel1 = new javax.swing.JPanel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -154,52 +156,64 @@ public class SmartFileManager extends javax.swing.JFrame {
         computer.setTitle("Computer");
         WebFileList wb= new WebFileList();
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(BorderFactory.createEmptyBorder(),"Test"));
+        computerPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(BorderFactory.createEmptyBorder(),"Test"));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        userHomePane.setTitle(User.getUsername());
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 912, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+        jPanel1.setOpaque(false);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 671, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane1.setViewportView(jTextArea2);
+        userHomePane.getContentPane().add(jPanel1);
 
-        collapsiblePanel1.add(jScrollPane1, java.awt.BorderLayout.CENTER);
+        jXTaskPaneContainer2.add(userHomePane);
+
+        javax.swing.GroupLayout computerScrollablePaneLayout = new javax.swing.GroupLayout(computerScrollablePane);
+        computerScrollablePane.setLayout(computerScrollablePaneLayout);
+        computerScrollablePaneLayout.setHorizontalGroup(
+            computerScrollablePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(computerScrollablePaneLayout.createSequentialGroup()
+                .addComponent(jXTaskPaneContainer2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        computerScrollablePaneLayout.setVerticalGroup(
+            computerScrollablePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(computerScrollablePaneLayout.createSequentialGroup()
+                .addComponent(jXTaskPaneContainer2, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 20, Short.MAX_VALUE))
+        );
+
+        computerScrollPane.setViewportView(computerScrollablePane);
+
+        javax.swing.GroupLayout computerPanelLayout = new javax.swing.GroupLayout(computerPanel);
+        computerPanel.setLayout(computerPanelLayout);
+        computerPanelLayout.setHorizontalGroup(
+            computerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(computerScrollPane)
+        );
+        computerPanelLayout.setVerticalGroup(
+            computerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(computerScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout computerLayout = new javax.swing.GroupLayout(computer.getContentContainer());
         computer.getContentContainer().setLayout(computerLayout);
         computerLayout.setHorizontalGroup(
             computerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(collapsiblePanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(computerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(computerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         computerLayout.setVerticalGroup(
             computerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(computerLayout.createSequentialGroup()
-                .addComponent(collapsiblePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(156, 156, 156))
+            .addComponent(computerPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout FilePaneLayout = new javax.swing.GroupLayout(FilePane);
@@ -393,8 +407,10 @@ public class SmartFileManager extends javax.swing.JFrame {
     private javax.swing.JMenuItem aboutMenuItem;
     private org.jdesktop.swingx.JXTaskPaneContainer actionsSideBar;
     private javax.swing.JButton backButton;
-    private gr.teicm.pm.smartfilemanager.smartfilemanagerui.collapsiblepane.CollapsiblePanel collapsiblePanel1;
     private org.jdesktop.swingx.JXTitledPanel computer;
+    private javax.swing.JPanel computerPanel;
+    private javax.swing.JScrollPane computerScrollPane;
+    private javax.swing.JPanel computerScrollablePane;
     private javax.swing.JMenuItem contentsMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
     private javax.swing.JMenuItem cutMenuItem;
@@ -405,12 +421,9 @@ public class SmartFileManager extends javax.swing.JFrame {
     private javax.swing.JButton forwardButton;
     private javax.swing.JMenu helpMenu;
     private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JPanel jPanel1;
     private org.jdesktop.swingx.JXHyperlink jXHyperlink1;
+    private org.jdesktop.swingx.JXTaskPaneContainer jXTaskPaneContainer2;
     private javax.swing.JSplitPane mainPane;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JPanel navigationPanel;
@@ -420,6 +433,7 @@ public class SmartFileManager extends javax.swing.JFrame {
     private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
     private javax.swing.JMenuItem showHideNavigationBar;
+    private org.jdesktop.swingx.JXTaskPane userHomePane;
     private javax.swing.JMenu viewMenu;
     private com.alee.extended.filechooser.WebPathField webPathField1;
     // End of variables declaration//GEN-END:variables

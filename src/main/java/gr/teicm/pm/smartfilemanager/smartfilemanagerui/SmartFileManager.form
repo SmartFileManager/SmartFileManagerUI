@@ -425,27 +425,17 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="collapsiblePanel1" alignment="0" max="32767" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="computerPanel" alignment="0" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="collapsiblePanel1" min="-2" pref="136" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="computerPanel" alignment="1" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Container class="javax.swing.JPanel" name="jPanel2">
+                <Container class="javax.swing.JPanel" name="computerPanel">
                   <Properties>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                       <Connection code="javax.swing.BorderFactory.createTitledBorder(BorderFactory.createEmptyBorder(),&quot;Test&quot;)" type="code"/>
@@ -455,63 +445,169 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jScrollPane2" min="-2" pref="912" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="computerScrollPane" alignment="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jScrollPane2" min="-2" pref="331" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="computerScrollPane" alignment="0" pref="349" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
-                      <AuxValues>
-                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                      </AuxValues>
+                    <Container class="javax.swing.JScrollPane" name="computerScrollPane">
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTextArea" name="jTextArea1">
-                          <Properties>
-                            <Property name="columns" type="int" value="20"/>
-                            <Property name="rows" type="int" value="5"/>
-                          </Properties>
-                        </Component>
-                      </SubComponents>
-                    </Container>
-                  </SubComponents>
-                </Container>
-                <Container class="gr.teicm.pm.smartfilemanager.smartfilemanagerui.collapsiblepane.CollapsiblePanel" name="collapsiblePanel1">
+                        <Container class="javax.swing.JPanel" name="computerScrollablePane">
 
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
-                  <SubComponents>
-                    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-                      <AuxValues>
-                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                      </AuxValues>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
-                          <BorderConstraints direction="Center"/>
-                        </Constraint>
-                      </Constraints>
+                          <Layout>
+                            <DimensionLayout dim="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jXTaskPaneContainer2" max="32767" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                            </DimensionLayout>
+                            <DimensionLayout dim="1">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jXTaskPaneContainer2" min="-2" pref="330" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="20" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                            </DimensionLayout>
+                          </Layout>
+                          <SubComponents>
+                            <Container class="org.jdesktop.swingx.JXTaskPaneContainer" name="jXTaskPaneContainer2">
+                              <SubComponents>
+                                <Container class="org.jdesktop.swingx.JXTaskPane" name="userHomePane">
+                                  <Properties>
+                                    <Property name="title" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                                      <Connection code="User.getUsername()" type="code"/>
+                                    </Property>
+                                  </Properties>
+                                  <SubComponents>
+                                    <Container class="javax.swing.JPanel" name="jPanel1">
+                                      <Properties>
+                                        <Property name="opaque" type="boolean" value="false"/>
+                                      </Properties>
 
-                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                      <SubComponents>
-                        <Component class="javax.swing.JTextArea" name="jTextArea2">
-                          <Properties>
-                            <Property name="columns" type="int" value="20"/>
-                            <Property name="rows" type="int" value="5"/>
-                          </Properties>
-                        </Component>
+                                      <Layout>
+                                        <DimensionLayout dim="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <EmptySpace min="0" pref="671" max="32767" attributes="0"/>
+                                          </Group>
+                                        </DimensionLayout>
+                                        <DimensionLayout dim="1">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
+                                          </Group>
+                                        </DimensionLayout>
+                                      </Layout>
+                                    </Container>
+                                  </SubComponents>
+                                  <LayoutCode>
+                                    <CodeStatement>
+                                      <CodeExpression id="8_verticalLayout7">
+                                        <CodeVariable name="verticalLayout7" type="4096" declaredType="org.jdesktop.swingx.VerticalLayout"/>
+                                        <ExpressionOrigin>
+                                          <ExpressionProvider type="CodeConstructor">
+                                            <CodeConstructor class="org.jdesktop.swingx.VerticalLayout" parameterTypes=""/>
+                                          </ExpressionProvider>
+                                        </ExpressionOrigin>
+                                      </CodeExpression>
+                                      <StatementProvider type="CodeExpression">
+                                        <CodeExpression id="8_verticalLayout7"/>
+                                      </StatementProvider>
+                                    </CodeStatement>
+                                    <CodeStatement>
+                                      <CodeExpression id="8_verticalLayout7"/>
+                                      <StatementProvider type="CodeMethod">
+                                        <CodeMethod name="setGap" class="org.jdesktop.swingx.VerticalLayout" parameterTypes="int"/>
+                                      </StatementProvider>
+                                      <Parameters>
+                                        <CodeExpression id="9">
+                                          <ExpressionOrigin>
+                                            <Value type="int" value="2"/>
+                                          </ExpressionOrigin>
+                                        </CodeExpression>
+                                      </Parameters>
+                                    </CodeStatement>
+                                    <CodeStatement>
+                                      <CodeExpression id="10">
+                                        <ExpressionOrigin>
+                                          <CodeExpression id="11_userHomePane">
+                                            <CodeVariable name="userHomePane" type="8194" declaredType="org.jdesktop.swingx.JXTaskPane"/>
+                                            <ExpressionOrigin>
+                                              <ExpressionProvider type="ComponentRef">
+                                                <ComponentRef name="userHomePane"/>
+                                              </ExpressionProvider>
+                                            </ExpressionOrigin>
+                                          </CodeExpression>
+                                          <ExpressionProvider type="CodeMethod">
+                                            <CodeMethod name="getContentPane" class="org.jdesktop.swingx.JXTaskPane" parameterTypes=""/>
+                                          </ExpressionProvider>
+                                        </ExpressionOrigin>
+                                      </CodeExpression>
+                                      <StatementProvider type="CodeMethod">
+                                        <CodeMethod name="setLayout" class="java.awt.Container" parameterTypes="java.awt.LayoutManager"/>
+                                      </StatementProvider>
+                                      <Parameters>
+                                        <CodeExpression id="8_verticalLayout7"/>
+                                      </Parameters>
+                                    </CodeStatement>
+                                  </LayoutCode>
+                                </Container>
+                              </SubComponents>
+                              <LayoutCode>
+                                <CodeStatement>
+                                  <CodeExpression id="12_verticalLayout6">
+                                    <CodeVariable name="verticalLayout6" type="4096" declaredType="org.jdesktop.swingx.VerticalLayout"/>
+                                    <ExpressionOrigin>
+                                      <ExpressionProvider type="CodeConstructor">
+                                        <CodeConstructor class="org.jdesktop.swingx.VerticalLayout" parameterTypes=""/>
+                                      </ExpressionProvider>
+                                    </ExpressionOrigin>
+                                  </CodeExpression>
+                                  <StatementProvider type="CodeExpression">
+                                    <CodeExpression id="12_verticalLayout6"/>
+                                  </StatementProvider>
+                                </CodeStatement>
+                                <CodeStatement>
+                                  <CodeExpression id="12_verticalLayout6"/>
+                                  <StatementProvider type="CodeMethod">
+                                    <CodeMethod name="setGap" class="org.jdesktop.swingx.VerticalLayout" parameterTypes="int"/>
+                                  </StatementProvider>
+                                  <Parameters>
+                                    <CodeExpression id="13">
+                                      <ExpressionOrigin>
+                                        <Value type="int" value="14"/>
+                                      </ExpressionOrigin>
+                                    </CodeExpression>
+                                  </Parameters>
+                                </CodeStatement>
+                                <CodeStatement>
+                                  <CodeExpression id="14_jXTaskPaneContainer2">
+                                    <CodeVariable name="jXTaskPaneContainer2" type="8194" declaredType="org.jdesktop.swingx.JXTaskPaneContainer"/>
+                                    <ExpressionOrigin>
+                                      <ExpressionProvider type="ComponentRef">
+                                        <ComponentRef name="jXTaskPaneContainer2"/>
+                                      </ExpressionProvider>
+                                    </ExpressionOrigin>
+                                  </CodeExpression>
+                                  <StatementProvider type="CodeMethod">
+                                    <CodeMethod name="setLayout" class="java.awt.Container" parameterTypes="java.awt.LayoutManager"/>
+                                  </StatementProvider>
+                                  <Parameters>
+                                    <CodeExpression id="12_verticalLayout6"/>
+                                  </Parameters>
+                                </CodeStatement>
+                              </LayoutCode>
+                            </Container>
+                          </SubComponents>
+                        </Container>
                       </SubComponents>
                     </Container>
                   </SubComponents>

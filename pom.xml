@@ -20,7 +20,7 @@
         
         <dep-weblaf-version>1.28</dep-weblaf-version>
         <dep-commons-lang3-version>3.3.2</dep-commons-lang3-version>
-        <dep-fm-libcore-version>0.0.5</dep-fm-libcore-version>
+        <dep-fm-libcore-version>0.0.6</dep-fm-libcore-version>
         <dep-swingx-version>1.6.5-1</dep-swingx-version>
     </properties>
 
@@ -43,8 +43,9 @@
         </dependency>
         <dependency>
             <groupId>gr.teicm.pm.smartfilemanager</groupId>
-            <artifactId>smartfilemanagercoreLibrary</artifactId>
+            <artifactId>smartfilemanagercorelibrary</artifactId>
             <version>${dep-fm-libcore-version}</version>
+            <type>jar</type>
         </dependency>
         <dependency>
             <groupId>org.swinglabs.swingx</groupId>

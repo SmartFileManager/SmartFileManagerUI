@@ -12,6 +12,7 @@ package gr.teicm.pm.smartfilemanager.smartfilemanagerui.collapsiblepane;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
@@ -39,15 +40,16 @@ public class CollapsiblePanel extends JPanel {
         // border = BorderFactory.createTitledBorder(title);
         setBorder(border);
         BorderLayout borderLayout = new BorderLayout();
-        setLayout(borderLayout);
+      //  setLayout(borderLayout);
+        setLayout(new GridLayout());
         addMouseListener(mouseListener);
         dimension = getSize();
     }
 
     public void collapse() {
         Dimension dimension = new Dimension(this.dimension.getSize());
-        dimension.height = 33;
-        setSize(dimension);
+    //    dimension.height = 33;
+       // setSize(dimension);
         repaint();
     }
 
@@ -66,7 +68,7 @@ public class CollapsiblePanel extends JPanel {
         @Override
         public void componentShown(ComponentEvent e) {
             updateBorderTitle();
-            expand();
+        //    setSize(dimension);
         }
 
         @Override
