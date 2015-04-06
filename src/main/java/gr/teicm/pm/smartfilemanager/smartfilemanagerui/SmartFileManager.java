@@ -21,8 +21,7 @@ public class SmartFileManager extends javax.swing.JFrame {
      */
     public SmartFileManager() {
         initComponents();
-        String s = new String();
-        s = User.getUsername();
+
     }
 
     /**
